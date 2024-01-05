@@ -1,7 +1,7 @@
 ---
 title: "進化社会学課題1"
-author: "工科太郎(本名に書き換えること)"
-date: "2023/12/16(提出した日に書き換えること)"
+author: "正答例"
+date: "`r format(Sys.time(),'%Y/%m/%d')`"
 output: html_document
 ---
 
@@ -22,10 +22,15 @@ A) 横軸を$\mu$、縦軸を解析解(2.4)の値とするグラフを描きな�
 
 ```{r assignment-1-A}
 # ここにコードを書く
+p <- function(mu,p0,t) {
+  return(1-((1-mu)^t)*(1-p0))
+}
+curve(p(x,0,10),xlim=c(0,1),ylim=c(0,1),xlab='mu',ylab='p_10')
 ```
 
 B) 同様に、横軸を$p_0$、縦軸を解析解(2.4)の値とするグラフを描きなさい。ただし、初期値の範囲は$0 \le p_0 \le 1$、縦軸の範囲は$0 \le p_t \le 1$、世代数を$t=10$、$\mu = 0.1$とする。
 
 ```{r assignment-1-B}
 # ここにコードを書く
+curve(p(0.1,x,10),xlim=c(0,1),ylim=c(0,1),xlab='p_0',ylab='p_10')
 ```
